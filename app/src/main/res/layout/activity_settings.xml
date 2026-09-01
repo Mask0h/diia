@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient_2"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Шапка -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp">
+
+            <ImageView
+                android:id="@+id/btn_back"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_arrow"
+                android:padding="8dp"
+                android:rotation="180"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Налаштування"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:fontFamily="@font/e_ukraine_bold" />
+        </RelativeLayout>
+
+        <!-- Картка 1: ID-картка -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ID-картка"
+            android:textColor="#555555"
+            android:textSize="14sp"
+            android:fontFamily="@font/e_ukraine_medium"
+            android:layout_marginStart="4dp"
+            android:layout_marginBottom="6dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Фото секція -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="16dp">
+
+                    <ImageView
+                        android:id="@+id/iv_id_card_preview"
+                        android:layout_width="80dp"
+                        android:layout_height="100dp"
+                        android:background="@drawable/bg_avatar_rounded"
+                        android:scaleType="centerCrop"
+                        android:clipToOutline="true"
+                        android:src="@drawable/passport" />
+
+                    <Button
+                        android:id="@+id/btn_id_card_photo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="Змінити фото"
+                        android:textColor="#FFFFFF"
+                        android:backgroundTint="#000000"
+                        android:fontFamily="@font/e_ukraine_medium"
+                        android:textSize="12sp"
+                        app:cornerRadius="10dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ПІБ"
+                    android:textColor="#888888"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/e_ukraine_regular" />
+                <EditText
+                    android:id="@+id/et_id_card_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#F5F5F5"
+                    android:padding="12dp"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/e_ukraine_medium"
+                    android:layout_marginBottom="12dp"
+                    android:inputType="textMultiLine"
+                    android:lines="3" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Номер паспорта"
+                    android:textColor="#888888"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/e_ukraine_regular" />
+                <EditText
+                    android:id="@+id/et_id_card_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#F5F5F5"
+                    android:padding="12dp"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/e_ukraine_medium"
+                    android:layout_marginBottom="12dp"
+                    android:inputType="text" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Дата народження"
+                    android:textColor="#888888"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/e_ukraine_regular" />
+                <EditText
+                    android:id="@+id/et_id_card_birthday"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#F5F5F5"
+                    android:padding="12dp"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/e_ukraine_medium"
+                    android:inputType="text" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Картка 2: РНОКПП -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="РНОКПП (ІПН)"
+            android:textColor="#555555"
+            android:textSize="14sp"
+            android:fontFamily="@font/e_ukraine_medium"
+            android:layout_marginStart="4dp"
+            android:layout_marginBottom="6dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ПІБ"
+                    android:textColor="#888888"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/e_ukraine_regular" />
+                <EditText
+                    android:id="@+id/et_rnokpp_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#F5F5F5"
+                    android:padding="12dp"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/e_ukraine_medium"
+                    android:layout_marginBottom="12dp"
+                    android:inputType="textMultiLine"
+                    android:lines="3" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Податковий номер (10 цифр)"
+                    android:textColor="#888888"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/e_ukraine_regular" />
+                <EditText
+                    android:id="@+id/et_rnokpp_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#F5F5F5"
+                    android:padding="12dp"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/e_ukraine_medium"
+                    android:layout_marginBottom="12dp"
+                    android:inputType="number" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Дата народження"
+                    android:textColor="#888888"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/e_ukraine_regular" />
+                <EditText
+                    android:id="@+id/et_rnokpp_birthday"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#F5F5F5"
+                    android:padding="12dp"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/e_ukraine_medium"
+                    android:inputType="text" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Картка 3: Закордонний паспорт -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Закордонний паспорт"
+            android:textColor="#555555"
+            android:textSize="14sp"
+            android:fontFamily="@font/e_ukraine_medium"
+            android:layout_marginStart="4dp"
+            android:layout_marginBottom="6dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Фото секція -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="16dp">
+
+                    <ImageView
+                        android:id="@+id/iv_passport_preview"
+                        android:layout_width="80dp"
+                        android:layout_height="100dp"
+                        android:background="@drawable/bg_avatar_rounded"
+                        android:scaleType="centerCrop"
+                        android:clipToOutline="true"
+                        android:src="@drawable/passport" />
+
+                    <Button
+                        android:id="@+id/btn_passport_photo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="Змінити фото"
+                        android:textColor="#FFFFFF"
+                        android:backgroundTint="#000000"
+                        android:fontFamily="@font/e_ukraine_medium"
+                        android:textSize="12sp"
+                        app:cornerRadius="10dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ПІБ (латиниця / кирилиця)"
+                    android:textColor="#888888"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/e_ukraine_regular" />
+                <EditText
+                    android:id="@+id/et_passport_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#F5F5F5"
+                    android:padding="12dp"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/e_ukraine_medium"
+                    android:layout_marginBottom="12dp"
+                    android:inputType="textMultiLine"
+                    android:lines="3" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Номер паспорта"
+                    android:textColor="#888888"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/e_ukraine_regular" />
+                <EditText
+                    android:id="@+id/et_passport_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#F5F5F5"
+                    android:padding="12dp"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/e_ukraine_medium"
+                    android:layout_marginBottom="12dp"
+                    android:inputType="text" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Дата народження"
+                    android:textColor="#888888"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/e_ukraine_regular" />
+                <EditText
+                    android:id="@+id/et_passport_birthday"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#F5F5F5"
+                    android:padding="12dp"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/e_ukraine_medium"
+                    android:inputType="text" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Картка 4: Свідоцтво про народження -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Свідоцтво про народження"
+            android:textColor="#555555"
+            android:textSize="14sp"
+            android:fontFamily="@font/e_ukraine_medium"
+            android:layout_marginStart="4dp"
+            android:layout_marginBottom="6dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ПІБ дитини"
+                    android:textColor="#888888"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/e_ukraine_regular" />
+                <EditText
+                    android:id="@+id/et_birth_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#F5F5F5"
+                    android:padding="12dp"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/e_ukraine_medium"
+                    android:layout_marginBottom="12dp"
+                    android:inputType="textMultiLine"
+                    android:lines="3" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Дата народження"
+                    android:textColor="#888888"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/e_ukraine_regular" />
+                <EditText
+                    android:id="@+id/et_birth_birthday"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#F5F5F5"
+                    android:padding="12dp"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/e_ukraine_medium"
+                    android:layout_marginBottom="12dp"
+                    android:inputType="text" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Місце народження"
+                    android:textColor="#888888"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/e_ukraine_regular" />
+                <EditText
+                    android:id="@+id/et_birth_place"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#F5F5F5"
+                    android:padding="12dp"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/e_ukraine_medium"
+                    android:inputType="text" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Кнопка збереження -->
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Зберегти зміни"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#000000"
+            android:textSize="16sp"
+            android:fontFamily="@font/e_ukraine_bold"
+            app:cornerRadius="16dp"
+            android:layout_marginBottom="20dp" />
+
+    </LinearLayout>
+</ScrollView>

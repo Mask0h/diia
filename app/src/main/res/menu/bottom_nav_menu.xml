@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_feed"
+        android:icon="@drawable/ic_tape"
+        android:title="Стрічка" />
+    <item
+        android:id="@+id/nav_documents"
+        android:icon="@drawable/ic_documents"
+        android:title="Документи" />
+    <item
+        android:id="@+id/nav_ai"
+        android:icon="@drawable/ic_ai"
+        android:title="Дія.AI" />
+    <item
+        android:id="@+id/nav_services"
+        android:icon="@drawable/ic_service"
+        android:title="Сервіси" />
+    <item
+        android:id="@+id/nav_menu"
+        android:icon="@drawable/ic_menu"
+        android:title="Меню" />
+</menu>

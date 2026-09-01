@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <androidx.cardview.widget.CardView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_document"
+        android:layout_width="match_parent"
+        android:layout_height="470dp"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="20dp"
+        app:cardCornerRadius="28dp"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="#80FFFFFF">
+
+        <RelativeLayout
+            android:id="@+id/layout_front"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="24dp">
+
+            <!-- Заголовок документа -->
+            <TextView
+                android:id="@+id/tv_doc_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:textSize="22sp"
+                android:lineSpacingExtra="2dp"
+                android:fontFamily="@font/e_ukraine_bold" />
+
+            <!-- Блок с фото (для паспортов) -->
+            <RelativeLayout
+                android:id="@+id/block_passport_data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_doc_title"
+                android:layout_marginTop="20dp">
+
+                <ImageView
+                    android:id="@+id/iv_avatar"
+                    android:layout_width="120dp"
+                    android:layout_height="155dp"
+                    android:background="@drawable/bg_avatar_rounded"
+                    android:scaleType="centerCrop"
+                    android:clipToOutline="true" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/iv_avatar"
+                    android:layout_marginStart="16dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Дата\nнародження:"
+                        android:textColor="#8E8E93"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/e_ukraine_regular" />
+
+                    <TextView
+                        android:id="@+id/tv_doc_birthday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#000000"
+                        android:textSize="14sp"
+                        android:layout_marginBottom="16dp"
+                        android:fontFamily="@font/e_ukraine_medium" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Номер:"
+                        android:textColor="#8E8E93"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/e_ukraine_regular" />
+
+                    <TextView
+                        android:id="@+id/tv_doc_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#000000"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/e_ukraine_medium" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <!-- Блок РНОКПП (ФИО + дата без фото) -->
+            <LinearLayout
+                android:id="@+id/block_rnokpp_data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_doc_title"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tv_rnokpp_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/e_ukraine_bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Дата народження:"
+                    android:textColor="#8E8E93"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/e_ukraine_regular" />
+
+                <TextView
+                    android:id="@+id/tv_rnokpp_birthday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/e_ukraine_medium" />
+            </LinearLayout>
+
+            <!-- Блок Актовий запис про народження -->
+            <LinearLayout
+                android:id="@+id/block_birth_data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_doc_title"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tv_birth_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/e_ukraine_regular" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Дата народження:"
+                    android:textColor="#8E8E93"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/e_ukraine_regular" />
+
+                <TextView
+                    android:id="@+id/tv_birth_birthday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/e_ukraine_medium" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Місце народження:"
+                    android:textColor="#8E8E93"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/e_ukraine_regular" />
+
+                <TextView
+                    android:id="@+id/tv_birth_place"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/e_ukraine_medium" />
+            </LinearLayout>
+
+            <!-- Зелена статус стрічка (бігучий рядок) -->
+            <FrameLayout
+                android:id="@+id/layout_status"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:layout_below="@id/block_passport_data"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="-24dp"
+                android:layout_marginEnd="-24dp"
+                android:background="#A6EB97">
+
+                <com.example.dia.ContinuousMarqueeTextView
+                    android:id="@+id/tv_status_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </FrameLayout>
+
+            <!-- Великий номер для РНОКПП (внизу) -->
+            <RelativeLayout
+                android:id="@+id/layout_number_large"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/layout_status"
+                android:layout_marginTop="16dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tv_doc_number_large"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:textColor="#000000"
+                    android:textSize="28sp"
+                    android:fontFamily="@font/e_ukraine_bold" />
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_toEndOf="@id/tv_doc_number_large"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/ic_documents"
+                    android:alpha="0.5" />
+
+                <FrameLayout
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/bg_circle_black">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="•••"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </FrameLayout>
+            </RelativeLayout>
+
+            <!-- ПІБ власника внизу -->
+            <RelativeLayout
+                android:id="@+id/layout_name_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true">
+
+                <TextView
+                    android:id="@+id/tv_doc_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@id/btn_doc_menu"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="12dp"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/e_ukraine_bold" />
+
+                <FrameLayout
+                    android:id="@+id/btn_doc_menu"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/bg_circle_black">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="•••"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </FrameLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <!-- Зворотний бік картки (QR-код та Штрихкод) -->
+        <LinearLayout
+            android:id="@+id/layout_back"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:paddingHorizontal="24dp"
+            android:gravity="center_horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_back_timer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Код діятиме ще 2:02 хв"
+                android:textColor="#8E8E93"
+                android:textSize="13sp"
+                android:fontFamily="@font/e_ukraine_regular" />
+
+            <ImageView
+                android:id="@+id/iv_back_qr"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="24dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/qr_code_sample" />
+
+            <!-- Кнопки дій QR-код / Штрихкод -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <!-- Кнопка QR -->
+                <LinearLayout
+                    android:id="@+id/btn_back_qr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:layout_marginEnd="20dp">
+
+                    <FrameLayout
+                        android:id="@+id/circle_back_qr"
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:background="@drawable/bg_circle_black">
+
+                        <ImageView
+                            android:id="@+id/iv_icon_qr"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_qr_button"
+                            app:tint="#FFFFFF" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:id="@+id/tv_back_tab_qr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="QR-код"
+                        android:textColor="#000000"
+                        android:textSize="14sp"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/e_ukraine_medium" />
+                </LinearLayout>
+
+                <!-- Кнопка Штрихкод -->
+                <LinearLayout
+                    android:id="@+id/btn_back_barcode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:layout_marginStart="20dp">
+
+                    <FrameLayout
+                        android:id="@+id/circle_back_barcode"
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:background="@drawable/bg_circle_grey">
+
+                        <ImageView
+                            android:id="@+id/iv_icon_barcode"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_barcode_button"
+                            app:tint="#000000" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:id="@+id/tv_back_tab_barcode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Штрихкод"
+                        android:textColor="#000000"
+                        android:textSize="14sp"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/e_ukraine_medium" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</FrameLayout>

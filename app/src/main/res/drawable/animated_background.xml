@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+
+    <!-- Каждая сцена длится 3500 мс (3.5 секунды) -->
+    <item
+        android:drawable="@drawable/bg_gradient_1"
+        android:duration="3500" />
+    <item
+        android:drawable="@drawable/bg_gradient_2"
+        android:duration="3500" />
+    <item
+        android:drawable="@drawable/bg_gradient_3"
+        android:duration="3500" />
+
+</animation-list>

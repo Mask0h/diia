@@ -1,0 +1,22 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Top Left Finder -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M3,3h7v7H3V3z M5,5v3h3V5H5z M6,6h1v1H6V6z" />
+    <!-- Top Right Finder -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M14,3h7v7h-7V3z M16,5v3h3V5H16z M17,6h1v1h-1V6z" />
+    <!-- Bottom Left Finder -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M3,14h7v7H3V14z M5,16v3h3v-3H5z M6,17h1v1H6V17z" />
+    <!-- Bottom Right Data Dots -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M14,14h3v3h-3V14z M18,14h3v3h-3V14z M14,18h3v3h-3V18z M18,18h3v3h-3V18z" />
+</vector>
