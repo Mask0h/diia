@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/tv_download_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Завантаження оновлення..."
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:fontFamily="@font/e_ukraine_bold" />
+
+    <TextView
+        android:id="@+id/tv_download_subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Будь ласка, зачекайте"
+        android:textColor="#8E8E93"
+        android:textSize="13sp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/e_ukraine_regular" />
+
+    <ProgressBar
+        android:id="@+id/pb_download"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_marginTop="20dp"
+        android:max="100"
+        android:progress="0"
+        android:progressDrawable="@drawable/bg_diia_gradient" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/tv_download_percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0%"
+            android:textColor="#000000"
+            android:textSize="13sp"
+            android:fontFamily="@font/e_ukraine_medium" />
+
+        <TextView
+            android:id="@+id/tv_download_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="0.0 MB / 0.0 MB"
+            android:textColor="#8E8E93"
+            android:textSize="12sp"
+            android:fontFamily="@font/e_ukraine_regular" />
+    </RelativeLayout>
+</LinearLayout>
