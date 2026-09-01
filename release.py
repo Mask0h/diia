@@ -19,13 +19,21 @@ import urllib.request
 import urllib.error
 from pathlib import Path
 
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+
 # ==================== НАЛАШТУВАННЯ GITHUB ====================
 GITHUB_OWNER = "Mask0h"         # Ваш логін GitHub
 GITHUB_REPO = "diia"            # Назва репозиторію на GitHub
 
-# GitHub Personal Access Token (з правами 'repo' або 'contents:write')
-# Можна задати тут напряму АБО через змінну оточення GITHUB_TOKEN
-GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "ВАШ_GITHUB_TOKEN_ТУТ")
+# GitHub Personal Access Token (зчитується з .github_token або змінної GITHUB_TOKEN)
+TOKEN_FILE = Path(__file__).resolve().parent / ".github_token"
+if TOKEN_FILE.exists():
+    GITHUB_TOKEN = TOKEN_FILE.read_text(encoding="utf-8").strip()
+else:
+    GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "")
 
 # Режим збірки: 'debug' або 'release'
 BUILD_VARIANT = "debug"
